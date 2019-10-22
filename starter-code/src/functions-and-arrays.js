@@ -1,5 +1,15 @@
 // Find the maximum
-
+function maxOfTwoNumbers(number1, number2){
+ if(number1>number2){
+   return number1
+ }
+ else if(number1<number2){
+   return number2
+ }
+ else{
+   return number1, number2
+ }
+}
 // Finding Longest Word
 const words = [
   'mystery',
@@ -10,14 +20,53 @@ const words = [
   'orchard',
   'crackpot'
 ];
+function findLongestWord(words){
+  let longestWord = ''
+  if(words.length !== 0){
+    for(let i = 0; i < words.length; i++){
+      if(words[i].length > longestWord.length){
+        longestWord = words[i]
+      }
+    }
+  }
+  else{
+    return null
+  }
+  return longestWord
+} 
+findLongestWord(words)
 
 // Calculating a Sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-// Calculate the Average
+function sumArray (numbers){ 
+  let sum = 0
+  for(let i = 0; i < numbers.length; i++){
+    sum += numbers[i] 
+    } 
+  return sum 
+  }
 
+sumArray(numbers)
+
+// Calculate the Average
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+function averageNumbers(numbers){
+  if(numbers.length !== 0){
+    let sum = 0
+    let length = numbers.length
+    for(let i = 0 ; i < numbers.length; i++){
+      sum += numbers[i]
+    }
+    return sum/length
+  }
+  else {
+    return null
+  }
+}
+averageNumbers(numbersAvg)
 
 // Array of Strings
 const wordsArr = [
@@ -31,8 +80,21 @@ const wordsArr = [
   'chaos',
   'fuel',
   'palace'
-];
-
+]; 
+function averageWordLength(words){
+  if(words.length !== 0){
+    let sum = 0
+    let length = words.length
+    for(let i = 0 ; i < words.length; i++){
+      sum += words[i].length
+    }
+    return sum/length
+  }
+  else {
+    return null
+  }
+  
+}
 // Unique Arrays
 const wordsUnique = [
   'crab',
@@ -48,6 +110,14 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(words){
+  return words.filter((element,index) => {
+    return words.indexOf(element) === index
+  })
+}
+uniquifyArray(wordsUnique)
+
+
 // Finding Elements
 const wordsFind = [
   'machine',
@@ -58,7 +128,12 @@ const wordsFind = [
   'eating',
   'truth',
   'disobedience'
-];
+]; 
+
+function doesWordExist(words,wordToSearch){
+  return words.includes(wordToSearch)
+}
+doesWordExist(wordsFind,wordToSearch)
 
 // Counting Repetition
 const wordsCount = [
